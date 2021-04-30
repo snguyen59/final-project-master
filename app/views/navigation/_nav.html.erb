@@ -1,0 +1,50 @@
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <%# <span class="mdl-layout-title">Beeblee</span> %>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <!-- Right aligned menu below button -->
+       <a href="/shopping_cart/index">
+            <div class="material-icons mdl-badge mdl-badge--overlap" style="color: white;">shopping_cart</div>
+        </a>
+    </div>
+  </header>
+
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Beeblee</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/"><i class="material-icons">home</i> Home</a>
+
+      <a class="mdl-navigation__link" href="/feature/index"><i class="material-icons">view_list</i> Products</a>
+      <a class="mdl-navigation__link" href="/category/index"><i class="material-icons">category</i> Categories</a>
+      <%# <a class="mdl-navigation__link" href=""><i class="material-icons">history</i> Order History</a> %>
+        <a class="mdl-navigation__link" href="/contact/index"><i class="material-icons">perm_contact_calendar</i> Contact Us</a>
+          <% if !user_signed_in?%>
+            <a class="mdl-navigation__link" href="/users/sign_in" >
+                <i class="material-icons" >person</i>
+                Login
+            </a>
+          <%else%>
+
+            <a   class="mdl-navigation__link" href="/invoice/index" >
+                <i class="material-icons" >history</i>
+                Order History
+            </a>
+
+             <a class="mdl-navigation__link" href="/users/edit">
+               <i class="material-icons">
+                  person_pin
+                </i>
+                Profile
+            </a>
+
+            <a class="mdl-navigation__link" href="/users/sign_out"  data-method="delete" rel="nofollow">
+                <i class="material-icons" >power_settings_new</i>
+                Log out
+            </a>
+          <%end%>
+    </nav>
+  </div>
+
